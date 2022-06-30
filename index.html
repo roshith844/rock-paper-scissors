@@ -9,12 +9,40 @@
 <body>
 <script>
      function computerPlay(){
-          let things = ['Rock', 'Paper', 'Scissor'];
+          let things = ['rock', 'paper', 'scissor'];
           let thing = things[Math.floor(Math.random()*(3-0+1))+0];
           if(thing===undefined){
                thing=things[0]
           }
-          return(console.log(thing))
+          return(thing)
+}
+function playRound(playerSelection,computerSelection){
+     let LowerCasePlayerSelection=playerSelection.toLowerCase();
+     if(LowerCasePlayerSelection===computerSelection){
+          console.log("It's a draw do it again")
+     }
+
+    else if(LowerCasePlayerSelection==="rock"){
+         if(computerSelection==='paper'){
+          console.log(`You Lose!${computerSelection} beats ${playerSelection}`)
+         }
+        else{(console.log(`You won! ${playerSelection} beats ${computerSelection}`))} 
+     }
+
+     else if(LowerCasePlayerSelection==="scissor"){
+         if(computerSelection==='rock'){
+          console.log(`You Lose!${computerSelection} beats ${playerSelection}`)
+         }
+        else{(console.log(`You won! ${playerSelection} beats ${computerSelection}`))} 
+     }
+
+     else if(LowerCasePlayerSelection==="paper"){
+         if(computerSelection==='scissor'){
+          console.log(`You Lose!${computerSelection} beats ${playerSelection}`)
+         }
+        else{(console.log(`You won! ${playerSelection} beats ${computerSelection}`))} 
+     }else{
+          console.log(`${playerSelection} is not Valid ! try again`)}
 }
      </script>
      

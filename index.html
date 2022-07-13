@@ -55,12 +55,18 @@
      document.getElementById("playerScore").innerText=newplayerScore;
      if(newplayerScore>=5){
           document.getElementById('winner').innerText='You won'
+          reset();
      }
      else if(newComputerScore>=5){
           document.getElementById('winner').innerText='computer won'
+          reset();
      }else{
           document.getElementById('winner').innerText=''
      }
+    }
+    function reset(){
+     document.getElementById("playerScore").innerText='0';
+     document.getElementById("computerScore").innerText='0';
     }
     function judge(optionname){
      /* Determines who won */

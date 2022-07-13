@@ -13,6 +13,8 @@
      <button id="paper" onclick="playGame(id)">paper</button>
      <button id="scissor" onclick="playGame(id)">scissor</button>
 </div>
+<div id="winner">Click button to Play:)
+</div>
 <h1>Score Board</h1>
 <div><h2>computer:- </h2><div id="computerScore">0</div></div>
 <div><h2>You :- </h2><div id="playerScore">0</div></div>
@@ -22,10 +24,10 @@
   /* Plays one round of game */   
     function playGame(buttonId){
     let point=judge(buttonId)
-    turnToBoard(point)
-    }
+    showStatus(point)
+}
 
-    function turnToBoard(inputpoint){
+    function showStatus(inputpoint){
      /* calculates points for computer and player */
      let cpoint;
      let ppoint;
@@ -51,6 +53,14 @@
    let numbercurrentPlayerScore= parseInt(currentPlayerScore)
      let newplayerScore=numbercurrentPlayerScore+ppoint;
      document.getElementById("playerScore").innerText=newplayerScore;
+     if(newplayerScore>=5){
+          document.getElementById('winner').innerText='You won'
+     }
+     else if(newComputerScore>=5){
+          document.getElementById('winner').innerText='computer won'
+     }else{
+          document.getElementById('winner').innerText=''
+     }
     }
     function judge(optionname){
      /* Determines who won */
